@@ -1,0 +1,29 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+
+- task: SonarCloudPrepare@2
+  inputs:
+    SonarCloud: 'SonarCloud'
+    organization: 'lucas-paulger-sonarsource'
+    scannerMode: 'MSBuild'
+    msBuildVersion: '6.2.0.85879'
+    projectKey: 'lucas-paulger-sonarsource_dotnet-demo'
+    projectName: 'dotnet-demo'
+
+- task: SonarCloudAnalyze@2
+  inputs:
+    jdkversion: 'JAVA_HOME_17_X64'
+
+- task: SonarCloudPublish@2
+  inputs:
+    pollingTimeoutSec: '300'
