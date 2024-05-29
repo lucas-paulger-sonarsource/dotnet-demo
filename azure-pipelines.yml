@@ -11,6 +11,11 @@ pool:
 
 steps:
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: 'sonar-dummy-dotnet-project.sln'
+
 - task: SonarCloudPrepare@2
   inputs:
     SonarCloud: 'SonarCloud'
