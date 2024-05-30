@@ -11,7 +11,7 @@ pool:
 
 steps:
 
-- task: SonarCloudPrepare@1
+- task: SonarCloudPrepare@2
   inputs:
     SonarCloud: 'SonarCloud'
     organization: 'lucas-paulger-sonarsource'
@@ -24,10 +24,10 @@ steps:
     command: 'build'
     projects: 'sonar-dummy-dotnet-project.sln'
 
-- task: SonarCloudAnalyze@1
+- task: SonarCloudAnalyze@2
   inputs:
     jdkversion: 'JAVA_HOME_17_X64'
 
-- task: SonarCloudPublish@1
+- task: SonarCloudPublish@2
   inputs:
     pollingTimeoutSec: '300'
