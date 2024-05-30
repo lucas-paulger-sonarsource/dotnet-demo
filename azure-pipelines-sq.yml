@@ -15,6 +15,7 @@ steps:
     SonarQube: 'SonarQube'
     scannerMode: 'MSBuild'
     projectKey: 'dotnet-demo'
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
