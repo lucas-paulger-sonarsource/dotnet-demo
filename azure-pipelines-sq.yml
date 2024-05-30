@@ -21,7 +21,7 @@ steps:
     command: 'build'
     projects: 'sonar-dummy-dotnet-project.sln'
 
-- task: SonarQubeAnalyze@6
+- task: SonarQubeAnalyze@5
   inputs:
     jdkversion: 'JAVA_HOME_17_X64'
 
