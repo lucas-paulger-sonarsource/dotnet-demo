@@ -10,15 +10,12 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-
 - task: SonarQubePrepare@5
   inputs:
-    SonarCloud: 'SonarCloud'
-    organization: 'lucas-paulger-sonarsource'
+    SonarQube: 'SonarQube'
     scannerMode: 'MSBuild'
-    projectKey: 'lucas-paulger-sonarsource_dotnet-demo'
+    projectKey: 'dotnet-demo'
     projectName: 'dotnet-demo'
-
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
