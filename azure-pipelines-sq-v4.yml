@@ -23,8 +23,6 @@ steps:
     projects: 'sonar-dummy-dotnet-project.sln'
 
 - task: SonarQubeAnalyze@4
-  inputs:
-    jdkversion: 'JAVA_HOME_17_X64'
 
 - task: SonarQubePublish@4
   inputs:
