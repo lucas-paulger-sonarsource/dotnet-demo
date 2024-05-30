@@ -24,7 +24,7 @@ steps:
 
 - task: SonarQubeAnalyze@4
   inputs:
-    jdkversion: 'JAVA_HOME_11_X64'
+    jdkversion: 'JAVA_HOME_17_X64'
 
 - task: SonarQubePublish@4
   inputs:
