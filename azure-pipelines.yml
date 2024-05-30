@@ -11,12 +11,11 @@ pool:
 
 steps:
 
-- task: SonarCloudPrepare@2
+- task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'SonarCloud'
     organization: 'lucas-paulger-sonarsource'
     scannerMode: 'MSBuild'
-    msBuildVersion: '6.2.0.85879'
     projectKey: 'lucas-paulger-sonarsource_dotnet-demo'
     projectName: 'dotnet-demo'
 
@@ -25,10 +24,10 @@ steps:
     command: 'build'
     projects: 'sonar-dummy-dotnet-project.sln'
 
-- task: SonarCloudAnalyze@2
+- task: SonarCloudAnalyze@1
   inputs:
     jdkversion: 'JAVA_HOME_17_X64'
 
-- task: SonarCloudPublish@2
+- task: SonarCloudPublish@1
   inputs:
     pollingTimeoutSec: '300'
