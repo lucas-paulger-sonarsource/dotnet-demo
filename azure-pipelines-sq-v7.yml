@@ -7,11 +7,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: Cache@2
-  inputs:
-    key: 'SonarScanner | "$(Build.SourcesDirectory)/src/extensions/sonarcloud" | "$(Build.SourcesDirectory)/src/extensions/sonarqube"'
-    path: '$(Agent.ToolsDirectory)/SonarScanner MSBuild'
-    cacheHitVar: 'CACHE_RESTORED'
 - task: SonarQubePrepare@7
   inputs:
     SonarQube: 'SonarQube'
