@@ -13,10 +13,6 @@ steps:
     scannerMode: 'MSBuild'
     msBuildVersion: '8.0.3.99785'
     projectKey: 'dotnet-demo'
-    extraProperties: |
-      # Additional properties that will be passed to the scanner, 
-      # Put one key=value per line, example:
-      sonar.scanner.skipJreProvisioning=true
     
 - task: DotNetCoreCLI@2
   inputs:
