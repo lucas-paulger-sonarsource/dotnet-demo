@@ -14,7 +14,7 @@ steps:
     msBuildVersion: '8.0.3.99785'
     projectKey: 'dotnet-demo'
     extraProperties: |
-      sonar.scanner.skipJreProvisioning=true
+      sonar.scanner.javaExePath=$(JAVA_HOME_17_X64)
 
 - task: DotNetCoreCLI@2
   inputs:
