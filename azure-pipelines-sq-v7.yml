@@ -7,15 +7,12 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: JavaToolInstaller@0
-  inputs:
-    versionSpec: '11'
-    jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'PreInstalled'
-
 - script: |
-    echo "JAVA_HOME is set to: $JAVA_HOME"
-  displayName: 'Print JAVA_HOME'
+    echo Unsetting JAVA_HOME_17_X64
+    set JAVA_HOME_17_X64=
+    echo JAVA_HOME_17_X64 is now: %JAVA_HOME_17_X64%
+  displayName: 'Emulate non-set JAVA_HOME_17_X64'
+
 - task: SonarQubePrepare@7
   inputs:
     SonarQube: 'SonarQube'
@@ -32,7 +29,7 @@ steps:
 
 - task: SonarQubeAnalyze@7
   inputs:
-    jdkversion: 'JAVA_HOME'
+    jdkversion: 'JAVA_HOME_17_X64'
 
 - task: SonarQubePublish@7
   inputs:
