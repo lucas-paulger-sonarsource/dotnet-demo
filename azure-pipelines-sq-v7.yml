@@ -13,8 +13,6 @@ steps:
     scannerMode: 'MSBuild'
     msBuildVersion: '8.0.3.99785'
     projectKey: 'dotnet-demo'
-    extraProperties: |
-      sonar.scanner.javaExePath=$(JAVA_HOME_17_X64)
 
 - task: DotNetCoreCLI@2
   inputs:
@@ -23,7 +21,7 @@ steps:
 
 - task: SonarQubeAnalyze@7
   inputs:
-    jdkversion: 'JAVA_HOME_17_X64'
+    jdkversion: 'JAVA_HOME_11_X64'
 
 - task: SonarQubePublish@7
   inputs:
