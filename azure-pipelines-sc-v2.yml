@@ -9,10 +9,10 @@ pool:
 
 steps:
 - task: Cache@2
-  displayName: Cache SonarScanner
   inputs:
-    key: '"SonarScanner" | ".NET" | "$(Agent.OS)"'
-    path: '$(Agent.ToolsDirectory)/SonarScanner .NET'
+    key: 'SonarScanner | "$(Build.SourcesDirectory)/src/extensions/sonarcloud" | "$(Build.SourcesDirectory)/src/extensions/sonarqube"'
+    path: '$(Agent.ToolsDirectory)/SonarScanner MSBuild'
+    cacheHitVar: 'CACHE_RESTORED'
 - task: SonarCloudPrepare@3
   inputs:
     SonarCloud: 'SonarCloud'
