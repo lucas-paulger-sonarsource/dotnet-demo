@@ -8,8 +8,12 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-
-- task: SonarCloudPrepare@2
+- task: Cache@2
+  displayName: Cache SonarScanner
+  inputs:
+    key: '"SonarScanner" | ".NET" | "$(Agent.OS)"'
+    path: '$(Agent.ToolsDirectory)/SonarScanner .NET'
+- task: SonarCloudPrepare@3
   inputs:
     SonarCloud: 'SonarCloud'
     organization: 'lucas-paulger-sonarsource'
@@ -23,10 +27,10 @@ steps:
     command: 'build'
     projects: 'sonar-dummy-dotnet-project.sln'
 
-- task: SonarCloudAnalyze@2
+- task: SonarCloudAnalyze@3
   inputs:
     jdkversion: 'JAVA_HOME_17_X64'
 
-- task: SonarCloudPublish@2
+- task: SonarCloudPublish@3
   inputs:
     pollingTimeoutSec: '300'
