@@ -13,7 +13,7 @@ steps:
     scannerMode: 'MSBuild'
     projectKey: 'dotnet-demo'
 
-- task: DotNetCoreCLI@2
+- task: DotNetCoreCLI@2 
   inputs:
     command: 'build'
     projects: 'sonar-dummy-dotnet-project.sln'
