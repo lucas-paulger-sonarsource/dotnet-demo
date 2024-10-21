@@ -12,6 +12,7 @@ steps:
   inputs:
     SonarQube: 'SonarQube'
     scannerMode: 'dotnet'
+    dotnetScannerVersion: '9.0.0.100868'
     projectKey: 'dotnet-demo'
 
 - task: DotNetCoreCLI@2
