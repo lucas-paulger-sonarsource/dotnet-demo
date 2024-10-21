@@ -8,18 +8,12 @@ pool:
 
 steps:
 
-- script: |
-    echo Unsetting JAVA_HOME_17_X64
-    set JAVA_HOME_17_X64=
-    echo JAVA_HOME_17_X64 is now: %JAVA_HOME_17_X64%
-  displayName: 'Emulate non-set JAVA_HOME_17_X64'
+
 - task: SonarQubePrepare@7
   inputs:
     SonarQube: 'SonarQube'
-    scannerMode: 'MSBuild'
+    scannerMode: 'dotnet'
     projectKey: 'dotnet-demo'
-    extraProperties: |
-     sonar.scanner.skipJreProvisioning=true
 
 - task: DotNetCoreCLI@2
   inputs:
