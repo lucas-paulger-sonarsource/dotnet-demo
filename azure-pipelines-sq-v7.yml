@@ -8,6 +8,7 @@ pool:
 
 steps:
 
+
 - task: SonarQubePrepare@7
   inputs:
     SonarQube: 'SonarQube'
