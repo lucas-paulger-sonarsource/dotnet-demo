@@ -43,6 +43,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"lucas-paulger-sonarsource_dotnet-demo" /o:"lucas-paulger-sonarsource" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://dev5.sc-dev5.io" /d:sonar.scanner.sonarcloudUrl="true"
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"lucas-paulger-sonarsource_dotnet-demo" /o:"lucas-paulger-sonarsource" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.scanner.sonarcloudUrl="https://dev5.sc-dev5.io"
           dotnet build
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
