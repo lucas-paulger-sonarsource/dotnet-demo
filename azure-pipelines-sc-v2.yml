@@ -13,7 +13,7 @@ steps:
     key: 'SonarScanner | "$(Build.SourcesDirectory)/src/extensions/sonarcloud" | "$(Build.SourcesDirectory)/src/extensions/sonarqube"'
     path: '$(Agent.ToolsDirectory)/SonarScanner MSBuild'
     cacheHitVar: 'CACHE_RESTORED'
-- task: SonarCloudPrepare@3
+- task: SonarCloudPrepare@2
   inputs:
     SonarCloud: 'SonarCloud'
     organization: 'lucas-paulger-sonarsource'
@@ -27,10 +27,10 @@ steps:
     command: 'build'
     projects: 'sonar-dummy-dotnet-project.sln'
 
-- task: SonarCloudAnalyze@3
+- task: SonarCloudAnalyze@2
   inputs:
     jdkversion: 'JAVA_HOME_17_X64'
 
-- task: SonarCloudPublish@3
+- task: SonarCloudPublish@2
   inputs:
     pollingTimeoutSec: '300'
