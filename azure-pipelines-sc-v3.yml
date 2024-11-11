@@ -10,7 +10,7 @@ steps:
 
 - task: SonarCloudPrepare@3
   inputs:
-    SonarCloud: 'SonarCloud'
+    SonarQube: 'SonarCloud'
     organization: 'lucas-paulger-sonarsource'
     scannerMode: 'dotnet'
     projectKey: 'lucas-paulger-sonarsource_dotnet-demo'
