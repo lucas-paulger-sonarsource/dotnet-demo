@@ -11,7 +11,7 @@ steps:
 
 - task: SonarQubePrepare@7
   inputs:
-    SonarQube: 'SonarQube'
+    SonarQube: 'SQ local community'
     scannerMode: 'dotnet'
     projectKey: 'dotnet-demo'
 
